@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3"></script>
+
+    <style>
+      .me {
+        left: 600px;
+      }
+      .body {
+        position: absolute;
+        background-color: blue;
+        top: 200px;
+        left: inherit;
+        width: 200px;
+        height: 400px;
+      }
+      .head {
+        position: absolute;
+        background-color: gray;
+        width: 100px;
+        height: 100px;
+        top: 100px;
+        left: inherit;
+        border-radius: 100%;
+      }
+      .arms {
+        position: absolute;
+        background-color: brown;
+        width: 200px;
+        height: 50px;
+        top: 300px;
+        left: 650px;
+        z-index: 1;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="app">
+      {{message}}
+      <div class="me" id="me">
+        <div class="head">s</div>
+        <div class="body" id="element">asd</div>
+        <div class="arms" id="arms">arms</div>
+      </div>
+      <button @keydown="keybordcatcher($event)">sag</button>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
