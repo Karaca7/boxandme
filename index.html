@@ -9,33 +9,51 @@
 
     <style>
       .me {
+        position: absolute;
+        width: 500px;
+        height: 520px;
+
         left: 600px;
-      }
-      .body {
-        position: absolute;
-        background-color: blue;
-        top: 200px;
-        left: inherit;
-        width: 200px;
-        height: 400px;
-      }
-      .head {
-        position: absolute;
-        background-color: gray;
-        width: 100px;
-        height: 100px;
         top: 100px;
-        left: inherit;
-        border-radius: 100%;
+        background-image: url(./gourd.png);
+        background-repeat: no-repeat;
       }
-      .arms {
+      .me2 {
         position: absolute;
-        background-color: brown;
-        width: 200px;
-        height: 50px;
-        top: 300px;
-        left: 650px;
-        z-index: 1;
+        width: 500px;
+        height: 520px;
+
+        left: 600px;
+        animation-name: leftpunch;
+        animation-duration: 200ms;
+        background-repeat: no-repeat;
+      }
+      @keyframes leftpunch {
+        /* 0% {
+          background-image: url(./gourd.png);
+        } */
+        100% {
+          background-image: url(./leftpunch.png);
+        }
+      }
+
+      .me3 {
+        position: absolute;
+        width: 500px;
+        height: 520px;
+
+        left: 600px;
+        animation-name: rightpunch;
+        animation-duration: 200ms;
+        background-repeat: no-repeat;
+      }
+      @keyframes rightpunch {
+        0% {
+          background-image: url(./gourd.png);
+        }
+        100% {
+          background-image: url(./rightpunch.png);
+        }
       }
     </style>
   </head>
@@ -44,11 +62,9 @@
     <div id="app">
       {{message}}
       <div class="me" id="me">
-        <div class="head">s</div>
-        <div class="body" id="element">asd</div>
-        <div class="arms" id="arms">arms</div>
+        <div class="leg"></div>
       </div>
-      <button @keydown="keybordcatcher($event)">sag</button>
+      <button @keydown="keybordcatcher($event)">start</button>
     </div>
     <script src="app.js"></script>
   </body>

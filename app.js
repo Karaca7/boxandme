@@ -11,6 +11,8 @@ const APP = {
   methods: {
     keybordcatcher(e) {
       // console.log(e);
+      me = document.getElementById("me");
+
       if (e.keyCode == "39") {
         // console.log("rigth");
         me = document.getElementById("me");
@@ -18,10 +20,6 @@ const APP = {
         console.log(this.position);
         me.style = ` 
         left:${this.position}px`;
-
-        myarms = document.getElementById("arms");
-        myarms.style = ` 
-      left:${this.position + 50}px`;
       }
 
       if (e.keyCode == "37") {
@@ -30,9 +28,32 @@ const APP = {
         console.log(this.position);
         me.style = ` 
         left:${this.position}px`;
-        myarms = document.getElementById("arms");
-        myarms.style = ` 
-        left:${this.position + 50}px`;
+      }
+
+      if (e.keyCode == "81") {
+        console.log("q");
+        me = document.getElementById("me");
+        me.classList.remove("me");
+
+        setTimeout(() => {
+          me.classList.add("me2");
+        }, 50);
+        me.classList.remove("me2");
+        me.classList.remove("me3");
+        me.classList.add("me");
+      }
+
+      if (e.keyCode == "69") {
+        console.log("e");
+        me = document.getElementById("me");
+        me.classList.remove("me");
+
+        setTimeout(() => {
+          me.classList.add("me3");
+        }, 50);
+        me.classList.remove("me2");
+        me.classList.remove("me3");
+        me.classList.add("me");
       }
     },
   },
